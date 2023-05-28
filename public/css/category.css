@@ -1,0 +1,156 @@
+/* styles.css */
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333333;
+}
+
+/* Heading styles */
+h1 {
+    color: #000080;
+    margin-bottom: 20px;
+}
+
+/* Navigation styles */
+nav {
+    margin-bottom: 20px;
+}
+
+.nav-button {
+    display: inline-block;
+    background-color: #000080;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #000080;
+    color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Link styles */
+a {
+    color: #000080;
+}
+
+a:hover {
+    color: #006400;
+}
+
+/* Container styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+/* Success message styles */
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+}
+
+/* Form styles */
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #000080;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+button[type="submit"] {
+    display: inline-block;
+    background-color: #000080;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #006400;
+}
+
+/* Error message styles */
+.alert {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+}
+
+.alert ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.alert li {
+    margin-bottom: 5px;
+}
+.add-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Optional: Adjust the positioning of the action buttons */
+  .action-buttons {
+    margin-bottom: 20px;
+  }

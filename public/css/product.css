@@ -1,0 +1,119 @@
+/* custom.css */
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  nav {
+    background-color: #2196f3;
+    padding: 10px;
+  }
+  
+  .nav-button {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 5px 10px;
+  }
+  
+  /* Dashboard page */
+  #category_filter,
+  #sort_filter {
+    margin-right: 10px;
+  }
+  
+  input[type="submit"] {
+    background-color: #2196f3;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* User Manager page */
+  a.btn {
+    background-color: #2196f3;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-right: 5px;
+  }
+  
+  /* Category Manager page */
+  a.btn-primary {
+    background-color: #2196f3;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-right: 5px;
+  }
+  
+  form button.btn-danger {
+    background-color: #f44336;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Product List page */
+  td img {
+    max-width: 50px;
+    max-height: 50px;
+  }
+  .add-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Optional: Adjust the positioning of the action buttons */
+  .action-buttons {
+    margin-bottom: 20px;
+  }
+  /* Custom styles for each page */
+  /* Product List page */
+  @yield('product-css')
+  
+  /* User Manager page */
+  @yield('user-css')
+  
+  /* Dashboard page */
+  @yield('dashboard-css')
+  
+  /* Category Manager page */
+  @yield('category-css')
+  
