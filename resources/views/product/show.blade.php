@@ -10,7 +10,7 @@
     </nav>
     <h1>Product Details</h1>
 
-    <div>
+    <div class="show-product">
         <h2>{{ $product->product_name }}</h2>
         <p>SKU: {{ $product->product_sku }}</p>
         <p>Category: {{ $product->category->category_name }}</p>

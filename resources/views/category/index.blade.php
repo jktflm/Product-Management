@@ -34,12 +34,12 @@
                         <td>{{ $category->category_name }}</td>
                         <td>{{ $category->description }}</td>
                         <td>
-                            <a href="{{ route('category.show', $category) }}">View</a>
-                            <a href="{{ route('category.edit', $category) }}">Edit</a>
+                            <a href="{{ route('category.show', $category) }}" class="add-button">View</a>
+                            <a href="{{ route('category.edit', $category) }}" class="add-button">Edit</a>
                             <form action="{{ route('category.destroy', $category) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit">Delete</button>
+                                <button type="submit" class="button">Delete</button>
                             </form>
                         </td>
                     </tr>

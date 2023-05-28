@@ -8,8 +8,11 @@
     <a href="{{ route('category.index') }}" class="nav-button">Category Manager</a>
     <a href="{{ route('product.index') }}" class="nav-button">Product Manager</a>
 </nav>
+<div class="show-product">
     <h1>Product Details</h1>
     <h2>{{ $product->product_name }}</h2>
     <p>{{ $product->product_description }}</p>
-    <!-- Add more product details as needed -->
+    <a href="{{ route('dashboard.index') }}">Back to Dashboard</a>
+</div>
+
 @endsection

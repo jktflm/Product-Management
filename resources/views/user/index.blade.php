@@ -37,12 +37,12 @@
                     <td>{{ $user->last_name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>
-                        <a href="{{ route('user.show', $user) }}">View</a>
-                        <a href="{{ route('user.edit', $user) }}">Edit</a>
+                        <a href="{{ route('user.show', $user) }}" class="button">View</a>
+                        <a href="{{ route('user.edit', $user) }}" class="button">Edit</a>
                         <form action="{{ route('user.destroy', $user) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit">Delete</button>
+                            <a type="submit" class="button">Delete</a>
                         </form>
                     </td>
                 </tr>

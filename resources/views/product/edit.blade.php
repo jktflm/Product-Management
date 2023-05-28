@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<link rel="stylesheet" href="{{ asset('css/product.css') }}">
+<link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 <nav class="centered-nav">
     <a href="{{ route('dashboard.index') }}" class="nav-button">Dashboard</a>
     <a href="{{ route('user.index') }}" class="nav-button">User Manager</a>

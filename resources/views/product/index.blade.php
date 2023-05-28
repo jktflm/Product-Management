@@ -30,16 +30,16 @@
                 <tr>
                     <td>{{ $product->product_name }}</td>
                     <td>{{ $product->product_sku }}</td>
-                    <td>{{ $product->category->category_name }}</td>
+                    <td>{{ $product->category->category_name ?? 'N/A'}}</td>
                     <td>{{ $product->product_description }}</td>
                     <td><img src="{{ asset('storage/'.$product->product_image) }}" alt="Product Image"></td>
                     <td>
-                        <a href="{{ route('product.show', $product->id) }}">View</a>
-                        <a href="{{ route('product.edit', $product->id) }}">Edit</a>
+                        <a href="{{ route('product.show', $product->id) }}" class="button" >View</a>
+                        <a href="{{ route('product.edit', $product->id) }}" class="button">Edit</a>
                         <form action="{{ route('product.destroy', $product->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit">Delete</button>
+                            <a type="submit" class="button">Delete</a>
                         </form>
                     </td>
                 </tr>
