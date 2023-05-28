@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+<link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+<nav class="centered-nav">
+    <a href="{{ route('dashboard.index') }}" class="nav-button">Dashboard</a>
+    <a href="{{ route('user.index') }}" class="nav-button">User Manager</a>
+    <a href="{{ route('category.index') }}" class="nav-button">Category Manager</a>
+    <a href="{{ route('product.index') }}" class="nav-button">Product Manager</a>
+</nav>
     <h1>Create Category</h1>
 
     @if ($errors->any())
@@ -22,10 +29,11 @@
         </div>
 
         <div class="form-group">
-            <label for="category_description">Category Description</label>
-            <textarea name="category_description" id="category_description" class="form-control" required></textarea>
+            <label for="description">Description</label>
+            <textarea name="description" id="description" class="form-control" required></textarea>
+
         </div>
 
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary">Create Category</button>
     </form>
 @endsection

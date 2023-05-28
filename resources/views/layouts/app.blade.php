@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Your Application</title>
+    <title>Product Management</title>
     <!-- Include CSS and JS files, meta tags, etc. -->
 </head>
 <body>

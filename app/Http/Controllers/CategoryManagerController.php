@@ -21,18 +21,25 @@ class CategoryManagerController extends Controller
     }
 
     public function store(Request $request)
-    {
-        // Validate the input
-        $validatedData = $request->validate([
-            'category_name' => 'required|unique:categories',
-            'category_description' => 'required',
-        ]);
+{
+    // Validate the input
+    $validatedData = $request->validate([
+        'category_name' => 'required|unique:categories',
+        'description' => 'required',
+    ]);
 
-        // Create a new category record
-        Category::create($validatedData);
+    // Create a new category record
+    
+    $category = new Category();
+    $category->category_name = $validatedData['category_name'];
+    $category->description = $validatedData['description'];
+    
+    $category->save();
+    return redirect()->route('category.index')->with('success', 'Category created successfully.');
+}
 
-        return redirect()->route('category.index')->with('success', 'Category created successfully.');
-    }
+
+
 
     public function show(Category $category)
     {
@@ -45,22 +52,20 @@ class CategoryManagerController extends Controller
     }
 
     public function update(Request $request, Category $category)
-{
-    // Validate the input
-    $validatedData = $request->validate([
-        'category_name' => 'required|unique:categories,category_name,' . $category->id,
-        'description' => 'required', // Updated validation rule to use 'description' column
-    ]);
+    {
+        // Validate the input
+        $validatedData = $request->validate([
+            'category_name' => 'required|unique:categories,category_name,' . $category->id,
+            'description' => 'required',
+        ]);
 
-    // Update the category record
-    $category->category_name = $validatedData['category_name'];
-    $category->description = $validatedData['description'];
-    $category->save();
+        // Update the category record
+        $category->category_name = $validatedData['category_name'];
+        $category->description = $validatedData['description'];
+        $category->save();
 
-    return redirect()->route('category.index')->with('success', 'Category updated successfully.');
-}
-
-
+        return redirect()->route('category.index')->with('success', 'Category updated successfully.');
+    }
     public function destroy(Category $category)
     {
         // Soft-delete the category record

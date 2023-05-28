@@ -47,7 +47,7 @@
         </tbody>
     </table>
     <div class="button-container">
-    <a href="{{ route('category.create') }}" class="add-button">Add Product</a>
+    <a href="{{ route('product.create') }}" class="add-button">Add Product</a>
         </div>
     
 @endsection

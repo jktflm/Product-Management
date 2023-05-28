@@ -50,6 +50,6 @@
         </tbody>
     </table>
     <div class="button-container">
-    <a href="{{ route('category.create') }}" class="add-button">Add User</a>
+    <a href="{{ route('user.create') }}" class="add-button">Add User</a>
         </div>
 @endsection

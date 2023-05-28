@@ -27,7 +27,7 @@ class ProductManagerController extends Controller
         return view('product.create', compact('categories'));
     }
 
-    public function store(Request $request)
+   public function store(Request $request)
 {
     // Validate the input
     $validatedData = $request->validate([
@@ -38,48 +38,26 @@ class ProductManagerController extends Controller
         'product_image' => 'image|mimes:jpeg,png,jpg|max:2048', // Adjust the allowed image types and maximum size as needed
     ]);
 
-    // Upload the product image if provided
-    if ($request->hasFile('product_image')) {
-        $image = $request->file('product_image');
-        $imagePath = $image->store('product_images', 'public');
-        $validatedData['product_image'] = $imagePath;
-    }
-
     // Create a new product record
     $product = new Product();
     $product->product_name = $validatedData['product_name'];
     $product->product_sku = $validatedData['product_sku'];
     $product->product_category_id = $validatedData['product_category_id'];
     $product->product_description = $validatedData['product_description'];
-    
-{
-    // Validate the uploaded file
-    $validatedData = $request->validate([
-        'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-    ]);
 
-    // Retrieve the uploaded image file
-    $imageFile = $request->file('image');
-
-    // Generate a unique filename for the image
-    $filename = uniqid() . '.' . $imageFile->getClientOriginalExtension();
-
-    // Save the image to the storage directory
-    $imageFile->storeAs('public/', $filename);
-
-    // Save the image file path to the database
-    // You can associate the image with a specific product or any other relevant entity
-    $product = new Product();
-    $product->product_image = 'public/' . $filename;
-    $product->save();
-
-    // Redirect or perform additional actions
-}
+    // Upload the product image if provided
+    if ($request->hasFile('product_image')) {
+        $image = $request->file('product_image');
+        $imagePath = $image->store('product_images', 'public');
+        $product->product_image = $imagePath;
+    }
 
     $product->save();
 
     return redirect()->route('product.index')->with('success', 'Product created successfully.');
 }
+
+    
 
 
     public function show(Product $product)

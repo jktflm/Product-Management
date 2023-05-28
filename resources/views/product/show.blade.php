@@ -7,7 +7,6 @@
         <a href="{{ route('user.index') }}" class="nav-button">User Manager</a>
         <a href="{{ route('category.index') }}" class="nav-button">Category Manager</a>
         <a href="{{ route('product.index') }}" class="nav-button">Product Manager</a>
-        
     </nav>
     <h1>Product Details</h1>
 
