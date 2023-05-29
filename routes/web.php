@@ -39,3 +39,4 @@ Route::get('/products/{product}/edit', [ProductManagerController::class, 'edit']
 Route::put('/products/{product}', [ProductManagerController::class, 'update'])->name('product.update');
 Route::delete('/products/{product}', [ProductManagerController::class, 'destroy'])->name('product.destroy');
 
+Route::get('api/product', [ProductManagerController::class, 'apis'])->name('product.apis');

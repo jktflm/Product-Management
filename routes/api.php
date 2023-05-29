@@ -19,6 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/products', [ProductManagerController::class, 'index']);
-// Add additional routes for update and delete operations as needed
+Route::get('/api/product', [ProductManagerController::class, 'apis']);
 

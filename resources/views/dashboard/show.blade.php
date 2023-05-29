@@ -12,6 +12,8 @@
     <h1>Product Details</h1>
     <h2>{{ $product->product_name }}</h2>
     <p>{{ $product->product_description }}</p>
+    <img src="{{ asset('storage/'.$product->product_image) }}" alt="Product Image">
+    <p></p>
     <a href="{{ route('dashboard.index') }}">Back to Dashboard</a>
 </div>
 

@@ -6,7 +6,7 @@ use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
-class ProductManagerController extends Controller
+class ApiController extends Controller
 {
     public function index(Request $request)
     {
@@ -15,39 +15,18 @@ class ProductManagerController extends Controller
         ->orderByDesc('updated_at')
         ->orderByDesc('created_at')
         ->get();
+        $products = Product::all();
+
+        return response()->json([
+            'status_code' => 200,
+            'message' => 'OK',
+            'data' => $products,
+        ]);
+
+        
         
     return view('product.index', compact('products'));
     }
-    public function apis(Request $request)
-{
-    // Retrieve products with pagination
-    $perPage = $request->input('per_page', 20);
-    $products = Product::with('category')
-        ->orderBy('product_name')
-        ->paginate($perPage);
-
-    $responseData = [
-        'status_code' => 200,
-        'message' => 'OK',
-        'data' => $products->items(),
-        'meta' => [
-            'pagination' => [
-                'total' => $products->total(),
-                'count' => $products->count(),
-                'per_page' => $products->perPage(),
-                'current_page' => $products->currentPage(),
-                'total_pages' => $products->lastPage(),
-                'links' => [
-                    'next' => $products->nextPageUrl(),
-                    'prev' => $products->previousPageUrl(),
-                ],
-            ],
-        ],
-    ];
-
-    return response()->json($responseData);
-}
-
 
     public function create()
     {
@@ -95,10 +74,10 @@ class ProductManagerController extends Controller
         // Retrieve the full details of a specific product
         $product->load('category');
 
-        
 
         return view('product.show', compact('product'));
     }
+ 
 
     public function edit(Product $product)
     {
