@@ -16,6 +16,15 @@ class ProductManagerController extends Controller
         ->orderByDesc('created_at')
         ->get();
 
+        $products = Product::all();
+
+        return response()->json([
+            'status_code' => 200,
+            'message' => 'OK',
+            'data' => $products,
+            // Add pagination details in the 'meta' section if required
+        ]);
+
     return view('product.index', compact('products'));
     }
 
@@ -64,6 +73,14 @@ class ProductManagerController extends Controller
     {
         // Retrieve the full details of a specific product
         $product->load('category');
+
+        $product = Product::findOrFail($id);
+
+        return response()->json([
+            'status_code' => 200,
+            'message' => 'OK',
+            'data' => $product,
+        ]);
 
         return view('product.show', compact('product'));
     }
