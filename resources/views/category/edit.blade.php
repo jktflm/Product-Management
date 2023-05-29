@@ -1,9 +1,16 @@
-<!-- resources/views/category/edit.blade.php -->
 
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+<link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+    <nav class="centered-nav">
+        <a href="{{ route('dashboard.index') }}" class="nav-button">Dashboard</a>
+        <a href="{{ route('user.index') }}" class="nav-button">User Manager</a>
+        <a href="{{ route('category.index') }}" class="nav-button">Category Manager</a>
+        <a href="{{ route('product.index') }}" class="nav-button">Product Manager</a>
+        
+    </nav>
+    <div class="show-product">
         <h1>Edit Category</h1>
         <form action="{{ route('category.update', $category) }}" method="POST">
             @csrf
@@ -19,7 +26,7 @@
                 <textarea name="description" id="description" class="form-control" required>{{ $category->description }}</textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="add-button">Update</button>
         </form>
     </div>
 @endsection

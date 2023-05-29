@@ -11,6 +11,7 @@
     <a href="{{ route('category.index') }}" class="nav-button">Category Manager</a>
     <a href="{{ route('product.index') }}" class="nav-button">Product Manager</a>
 </nav>
+<div class="show-product">
     <h1>Edit User</h1>
 
     @if ($errors->any())
@@ -22,10 +23,11 @@
             </ul>
         </div>
     @endif
-
+    
     <form action="{{ route('user.update', $user) }}" method="POST">
         @csrf
         @method('PUT')
+        
         <label for="username">Username:</label>
         <input type="text" name="username" id="username" value="{{ old('username', $user->username) }}" required>
         <label for="first_name">First Name:</label>
@@ -34,6 +36,7 @@
         <input type="text" name="last_name" id="last_name" value="{{ old('last_name', $user->last_name) }}" required>
         <label for="email">Email:</label>
         <input type="email" name="email" id="email" value="{{ old('email', $user->email) }}" required>
-        <button type="submit">Update</button>
+        <button type="submit" class="add-button">Update</button>
     </form>
+</div>
 @endsection

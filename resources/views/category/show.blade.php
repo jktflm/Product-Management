@@ -16,6 +16,6 @@
     <p><strong>Category Name:</strong> {{ $category->category_name }}</p>
     <p><strong>Category Description:</strong> {{ $category->description }}</p>
 
-    <a href="{{ route('category.index') }}">Back to Category List</a>
+    <a href="{{ route('category.index') }}" class="add-button">Back to Category List</a>
 </div>
 @endsection

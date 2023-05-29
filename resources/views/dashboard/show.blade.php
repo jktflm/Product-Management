@@ -14,7 +14,7 @@
     <p>{{ $product->product_description }}</p>
     <img src="{{ asset('storage/'.$product->product_image) }}" alt="Product Image">
     <p></p>
-    <a href="{{ route('dashboard.index') }}">Back to Dashboard</a>
+    <a href="{{ route('dashboard.index') }}" class="add-button" >Back to Dashboard</a>
 </div>
 
 @endsection
